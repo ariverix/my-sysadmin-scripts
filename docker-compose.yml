@@ -1,0 +1,9 @@
+services:
+  monitor:
+    build: .
+    image: my-script
+    command: ["/usr/local/bin/script.sh", "3"]
+    environment:
+      LOG_FILE: /data/monitor.log
+    volumes:
+      - /mnt/logs:/data
