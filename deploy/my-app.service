@@ -1,0 +1,12 @@
+[Unit]
+Description=my-app service (monitoring script in docker)
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker start -a my-app
+ExecStop=/usr/bin/docker stop my-app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
